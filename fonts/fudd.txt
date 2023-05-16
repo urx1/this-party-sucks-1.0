@@ -1,0 +1,26 @@
+Font: Fudd
+Created By: Matthew Welch
+E-Mail: matt@squaregear.net
+Web Address: http://www.squaregear.net/fonts/
+
+My fonts are all free.  You can use them for personal or commercial projects,
+and I ask for no money.  I would, however, love to hear from you.  If you use
+my fonts for something please e-mail me letting me know how you used it.  Send
+me a copy if you can or let me know where I can find your work. You are under
+no obligation to do this, I just like to see how my fonts get used.
+
+A license.txt file should have been included with this font, explaining the
+license under which it is made available. You can also read it at:
+
+http://www.squaregear.net/fonts/license.shtml
+
+About the font:
+
+This isn't the first "serious" body text type font I've started, but
+it is the first one that I've finished.  It has an even stroke
+weight, no contrast.  It now has hinting, an italic version, and
+several letters have been retouched.
+
+version 1.01 Improved letter spacing
+version 1.02 Added hinting, added italics, and touched up A and B
+version 1.03 Touched up ,.;: and reworked italics

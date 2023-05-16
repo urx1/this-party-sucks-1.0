@@ -1,0 +1,52 @@
+TODO:
+
+-Randomize pickup timer
+-Fix HUD
+    -Old values show up on new game
+    -Fix timers of labels
+
+-Balance pickup and mob spawn timers
+
+-Maximum lean values?
+
+-Add Pickup #3
+    -cake
+
+-Add Pickup #4
+    -
+
+-Make another player character? (mörökölli)
+
+-High score system?
+    -Write to and read from file
+
+-BUGS
+    -Stop mob spawns on new game
+    -Reset timers and other values on new game
+
+
+IDEAS:
+
+Add pickups to replace scoring system
+    -Spawn randomly on screen
+        -Timer to make disappear after X seconds
+        -on body entered, gain score OR hp
+
+-More pickup types
+    -Add speed
+    *Decrease speed
+    -Flip character
+    -Stop / slow enemies
+
+((( Add health points (?)
+    -Lose 1hp on contact with hostile
+        *After contact, hostile removed, pass through or change direction?
+
+Add more enemy types
+    -Slower, faster, bigger, smaller etc.
+    -Different movement directions
+        -Random straight direction
+        -Straight line on y / x
+        -Straight diagonal
+        *Curvy line (random)
+

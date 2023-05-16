@@ -1,0 +1,180 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Mob.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game.gd" type="Script" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://audio/song1.ogg" type="AudioStream" id=5]
+[ext_resource path="res://audio/fx/aika_Loop.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Pickup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Mob2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://MobTimer.gd" type="Script" id=9]
+[ext_resource path="res://Mob2Timer.gd" type="Script" id=10]
+[ext_resource path="res://Mob3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Mob3Timer.gd" type="Script" id=12]
+[ext_resource path="res://PickupTimer.gd" type="Script" id=13]
+[ext_resource path="res://art/background-tiles/kuvio-tosiharmaa.png" type="Texture" id=14]
+[ext_resource path="res://Pickup2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Pickup2Timer.gd" type="Script" id=16]
+[ext_resource path="res://Pickup3.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Pickup3Timer.gd" type="Script" id=18]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1280, 0, 0, 0, 0, 0, 1280, 1024, 0, 0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 1272, 8, 0, 0, 0, 0, 1272, 1024, 0, 0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 8 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1280, 0, 0, 0, 0, 0, 1280, 1024, 0, 0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 136, 120, 0, 0, 0, 0, 1136, 104, 0, 0, 0, 0, 1152, 272, 0, 0, 0, 0, 152, 304, 0, 0, 0, 0, 160, 504, 0, 0, 0, 0, 1128, 552, 0, 0, 0, 0, 1136, 704, 0, 0, 0, 0, 168, 752, 0, 0, 0, 0, 152, 920, 0, 0, 0, 0, 1112, 944, 0, 0, 0, 0, 136, 120 )
+}
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 64, 64, 0, 0, 0, 0, 1152, 72, 0, 0, 0, 0, 80, 264, 0, 0, 0, 0, 1136, 264, 0, 0, 0, 0, 72, 488, 0, 0, 0, 0, 1128, 488, 0, 0, 0, 0, 72, 704, 0, 0, 0, 0, 1112, 712, 0, 0, 0, 0, 64, 840, 0, 0, 0, 0, 1128, 840, 0, 0, 0, 0, 72, 952, 0, 0, 0, 0, 1192, 960, 0, 0, 0, 0, 776, 624, 0, 0, 0, 0, 368, 768, 0, 0, 0, 0, 400, 280, 0, 0, 0, 0, 728, 320 )
+}
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+mob_scene = ExtResource( 1 )
+mob2_scene = ExtResource( 8 )
+mob3_scene = ExtResource( 11 )
+pickup_scene = ExtResource( 7 )
+pickup2_scene = ExtResource( 15 )
+pickup3_scene = ExtResource( 17 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1272.0
+margin_bottom = 1024.0
+texture = ExtResource( 14 )
+stretch_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.243137, 0.301961, 0.227451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 2.0
+script = ExtResource( 9 )
+
+[node name="Mob2Timer" type="Timer" parent="."]
+wait_time = 3.0
+script = ExtResource( 10 )
+
+[node name="Mob3Timer" type="Timer" parent="."]
+wait_time = 4.0
+script = ExtResource( 12 )
+
+[node name="Mob2SpawnTimer" type="Timer" parent="."]
+wait_time = 6.0
+
+[node name="Mob3SpawnTimer" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="SpawnFreqTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="PickupTimer" type="Timer" parent="."]
+wait_time = 4.0
+script = ExtResource( 13 )
+
+[node name="Pickup2Timer" type="Timer" parent="."]
+wait_time = 2.0
+script = ExtResource( 16 )
+
+[node name="Pickup3Timer" type="Timer" parent="."]
+wait_time = 6.5
+script = ExtResource( 18 )
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="TimeOutTimer" type="Timer" parent="."]
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 640, 512 )
+
+[node name="MobPath" type="Path2D" parent="."]
+visible = false
+curve = SubResource( 1 )
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+
+[node name="Mob2Path" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="Mob2SpawnLocation" type="PathFollow2D" parent="Mob2Path"]
+position = Vector2( 0, 8 )
+
+[node name="Mob3Path" type="Path2D" parent="."]
+curve = SubResource( 3 )
+
+[node name="Mob3SpawnLocation" type="PathFollow2D" parent="Mob3Path"]
+
+[node name="PickupPath" type="Path2D" parent="."]
+curve = SubResource( 4 )
+
+[node name="PickupSpawnLocation" type="PathFollow2D" parent="PickupPath"]
+position = Vector2( 136, 120 )
+rotation = -0.0159965
+
+[node name="Pickup2Path" type="Path2D" parent="."]
+curve = SubResource( 5 )
+
+[node name="Pickup2SpawnLocation" type="PathFollow2D" parent="Pickup2Path"]
+position = Vector2( 64, 64 )
+rotation = 0.00735124
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -80, -104 )
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="WarningTimer" type="Timer" parent="."]
+
+[node name="TimeoutWarning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -0.985
+mix_target = 2
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+[connection signal="timeout" from="Mob2Timer" to="." method="_on_Mob2Timer_timeout"]
+[connection signal="timeout" from="Mob3Timer" to="." method="_on_Mob3Timer_timeout"]
+[connection signal="timeout" from="Mob2SpawnTimer" to="." method="_on_Mob2SpawnTimer_timeout"]
+[connection signal="timeout" from="Mob3SpawnTimer" to="." method="_on_Mob3SpawnTimer_timeout"]
+[connection signal="timeout" from="SpawnFreqTimer" to="MobTimer" method="_on_SpawnFreqTimer_timeout"]
+[connection signal="timeout" from="SpawnFreqTimer" to="Mob2Timer" method="_on_SpawnFreqTimer_timeout"]
+[connection signal="timeout" from="SpawnFreqTimer" to="Mob3Timer" method="_on_SpawnFreqTimer_timeout"]
+[connection signal="timeout" from="PickupTimer" to="." method="_on_PickupTimer_timeout"]
+[connection signal="timeout" from="PickupTimer" to="PickupTimer" method="_on_PickupTimer_timeout"]
+[connection signal="timeout" from="Pickup2Timer" to="." method="_on_Pickup2Timer_timeout"]
+[connection signal="timeout" from="Pickup2Timer" to="Pickup2Timer" method="_on_Pickup2Timer_timeout"]
+[connection signal="timeout" from="Pickup3Timer" to="." method="_on_Pickup3Timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="timeout" from="TimeOutTimer" to="." method="_on_TimeOutTimer_timeout"]
+[connection signal="hit" from="Player" to="." method="gameLost"]
+[connection signal="show_info" from="HUD" to="HUD" method="_on_StartButton_pressed"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="WarningTimer" to="." method="_on_WarningTimer_timeout"]

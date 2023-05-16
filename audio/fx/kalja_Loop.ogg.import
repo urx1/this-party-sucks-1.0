@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/kalja_Loop.ogg-f2353419f6279bf4d4b19253aaf0749c.oggstr"
+
+[deps]
+
+source_file="res://audio/fx/kalja_Loop.ogg"
+dest_files=[ "res://.import/kalja_Loop.ogg-f2353419f6279bf4d4b19253aaf0749c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

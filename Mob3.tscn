@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://art/agitaattori/agitaattori2.png" type="Texture" id=1]
+[ext_resource path="res://art/agitaattori/agitaattori.png" type="Texture" id=2]
+[ext_resource path="res://Mob3.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "anim1",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 28.5639
+height = 71.8881
+
+[node name="Mob3" type="RigidBody2D" groups=["mobs"]]
+z_index = 1
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 1 )
+scale = Vector2( 0.18, 0.18 )
+frames = SubResource( 1 )
+animation = "anim1"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
+shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
